@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Attendance</title>
+	<style type="text/css">
+			#box1{
+			border: 1px solid red;
+			height: 35%;
+			width: 	20%;
+			top: 	30%;
+			left: 	10%;
+			position: fixed;
+
+		}
+
+			#box2{
+			border: 1px solid blue;
+			height: 35%;
+			width: 	20%;
+			top: 	30%;
+			left: 	40%;
+			position: fixed;
+
+		}
+
+			#box3{
+			border: 1px solid green;
+			height: 35%;
+			width: 	20%;
+			top: 	30%;
+			left: 	70%;
+			position: fixed;
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+
+	<button value="Check All" onclick="checkalla()"> Check All :- A</button>
+	<button value="UnCheck All" onclick="uncheckalla()"> UnCheck All :- A</button>
+
+	<button value="Check All" onclick="checkallb()"> Check All :- B</button>
+	<button value="UnCheck All" onclick="uncheckallb()"> UnCheck All :- B</button>
+
+	<button value="Check All" onclick="checkallc()"> Check All :- C</button>
+	<button value="UnCheck All" onclick="uncheckallc()"> UnCheck All :- C</button></br></br>
+
+	<script type="text/javascript">
+
+		document.write("</br>"+"Class A"+"</br></br>")
+		
+		for(i=101;i<166;i++){
+
+			document.write("<input type='checkbox' class='A' onclick='Absentno1()' value='"+i+"'> "+i+"<br/>");
+		}
+
+		document.write("<br/>"+"Class B"+"<br/><br/>");
+
+		for(j=201;j<286;j++){
+
+			document.write("<input type='checkbox' class='B' onclick='Absentno2()' value='"+j+"'>"+j+"<br/>");
+		}
+
+		document.write("</br>"+"Class C"+"</br></br>")
+
+		for(k=301;k<366;k++){
+
+			document.write("<input type='checkbox' class='C' onclick='Absentno3()' value='"+k+"'>"+k+"<br/>")
+		}
+
+		function checkalla(){
+
+			var allstu1 = document.getElementsByClassName("A");
+
+			for(i=0;i<allstu1.length;i++){
+				allstu1[i].checked = true;
+			}
+		}
+
+		function uncheckalla(){
+
+			var allstu1 = document.getElementsByClassName("A");
+
+			for(i=0;i<allstu1.length;i++){
+				allstu1[i].checked = false;
+			}
+		}
+
+		function checkallb(){
+
+			var allstu2 = document.getElementsByClassName("B");
+
+			for(j=0;j<allstu2.length;j++){
+				allstu2[j].checked = true;
+			}
+		}
+
+		function uncheckallb(){
+
+			var allstu2 = document.getElementsByClassName("B");
+
+			for(j=0;j<allstu2.length;j++){
+				allstu2[j].checked = false;
+			}
+		}
+
+		function checkallc(){
+
+			var allstu3 = document.getElementsByClassName("C");
+
+			for(k=0;k<allstu3.length;k++){
+				allstu3[k].checked = true;
+			}
+		}
+
+		function uncheckallc(){
+
+			var allstu3 = document.getElementsByClassName("C");
+
+			for(k=0;k<allstu3.length;k++){
+				allstu3[k].checked = false;
+			}
+		}
+
+		function Absentno1(){
+
+			var allstu1 = document.getElementsByClassName("A");
+			allabs1 = "";
+
+			for(i=0;i<allstu1.length;i++){
+				if(!allstu1[i].checked){
+					allabs1 += allstu1[i].value+" , "
+				}
+			}
+
+			document.getElementById("box1").innerHTML = allabs1.substring(0,allabs1.length-2);
+		}
+
+		function Absentno2(){
+
+			var allstu2 = document.getElementsByClassName("B");
+			allabs2 = "";
+
+			for(j=0;j<allstu2.length;j++){
+				if(!allstu2[j].checked){
+					allabs2 += allstu2[j].value+" , "
+				}
+			}
+
+			document.getElementById("box2").innerHTML = allabs2.substring(0,allabs2.length-2);
+		}
+
+		function Absentno3(){
+
+			var allstu3 = document.getElementsByClassName("C");
+			allabs3 = "";
+
+			for(k=0;k<allstu3.length;k++){
+				if(!allstu3[k].checked){
+					allabs3 += allstu3[k].value+" , "
+				}
+			}
+                                                        
+			document.getElementById("box3").innerHTML = allabs3.substring(0,allabs3.length-2);
+		}
+
+	</script>
+
+</body>
+</html>

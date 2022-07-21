@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sort Array</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = new Array();
+		b=parseInt(prompt("Enter the number of numbers you want to enter"));
+		for(i=0;i<b;i++){
+			a[i]=parseInt(prompt("Enter the number"));
+		}
+		for(i=0;i<b;i++){
+			for(j=i+1;j<b;j++){
+				if(a[j]<a[i]){
+					a[i]=a[j];
+				}
+				else{
+					a[i]=a[j ];
+				}
+			}
+		}
+		for(i=0;i<b;i++){
+			console.log(a[i]);
+		}
+	</script>
+</body>
+</html>

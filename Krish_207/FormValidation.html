@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1 align="center">Form</h1>
+
+	<input type="text" id="text1" placeholder="Your Name"></br>
+	<input type="text" id="text2" placeholder="Your Number"></br>
+	<input type="text" id="text3" placeholder="Email Address"></br>
+	<input type="text" id="text4" placeholder="Darshan Address"></br>
+	<input type="button" id="button1" value="login" onclick="btn()">
+
+	<script type="text/javascript">
+		
+		function btn(){
+
+			var txt1 = document.getElementById("text1").value;
+			//var ptrn = /^[a-zA-Z]+$/;
+			var ptrn = /^[a-zA-Z]{1}[a-zA-Z0-9]+[_.]?[a-zA-Z0-9]+$/
+			var ragexp = new RegExp(ptrn);
+
+			var txt2 = document.getElementById("text2").value;
+			var ptrn1 = /^[0-9]{10}$/
+			var ragexp1 = new RegExp(ptrn1);
+
+			var txt3 = document.getElementById("text3").value;
+			var ptrn2 = /^[a-z0-9]+[@]+[gmail.com]$/
+			var ragexp2 = new RegExp(ptrn2);
+
+			var txt5 = document.getElementById("text4").value;
+			var ptrn4 = /^[a-z0-9]+[@]{1}+[darshan.ac.in]{1}$/
+			var ragexp4 = new RegExp(ptrn4);
+
+			if (ragexp.test(txt1)&&ragexp1.test(txt2)&&ragexp.test(txt3)){
+				alert("valid")
+			}
+
+			else{
+				alert("invalid")
+			}
+		}
+
+	</script>
+
+</body>
+</html>

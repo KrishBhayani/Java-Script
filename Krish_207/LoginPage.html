@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>LoginPage</title>
+</head>
+<body>
+
+	<h1 align="center" color="blue"> Login Page</h1>
+
+	<table align="center">
+		
+		<tr>
+			<td> Username </td>
+			<td> : </td>
+			<td><input type="text" id="uname"></td>
+		</tr>
+
+		<tr>
+			<td > Password </td>
+			<td> : </td>
+			<td><input type="password" id="txtPassword"></td>
+			<td><input type="button" id="tglbutton" value="Show" onclick="change1()"></td>
+		</tr>
+
+		<tr>
+			<td colspan="4" align="center"><input type="button" value="Login" onclick="login1()"></td>
+
+
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		
+		function login1() {
+			
+			var un = document.getElementById("uname");
+			var p = document.getElementById("txtPassword");
+
+			if(un.value=="Krish" && p.value=="Bhayani"){
+				document.write("Welcome to the Page");
+			}
+
+			else{
+				alert("Username or Password is incorrect");
+			}
+		}
+
+		function change1(){
+
+			var t = document.getElementById("txtPassword");
+			var tb = document.getElementById("tglbutton");
+		
+
+			if(t.type=="text"){
+				t.type="password";
+				tb.value="Show";
+			}
+
+			else{
+				t.type="text";
+				tb.value="Hide";
+			}
+		}
+
+
+	</script>
+
+</body>
+</html>
